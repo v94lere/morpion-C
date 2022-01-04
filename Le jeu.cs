@@ -28,9 +28,9 @@ namespace Morpion_ValereNeveux
                 {
                     Joueur = 2;
                 }
-                Console.WriteLine("Dans quel ligne souhaitez vous insérer votre jeton? (0 - 2)");
+                Console.WriteLine("Dans quel ligne souhaitez vous insérer? (0 - 2)");
                 ligne = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Dans quel colonne souhaitez vous insérer votre jeton? (0 - 2)");
+                Console.WriteLine("Dans quel colonne souhaitez vous insérer? (0 - 2)");
                 colonne = Convert.ToInt32(Console.ReadLine());
                 grilleMorpion.deposerJeton(ligne, colonne, Joueur);
                 if (grilleMorpion.victoireJoueur(Joueur, ligne, colonne))
@@ -68,7 +68,7 @@ namespace Morpion_ValereNeveux
                 {
                     Joueur = 2;
                 }
-                Console.WriteLine("Dans quel colonne souhaitez vous insérer votre jeton? (0 - 6)");
+                Console.WriteLine("Dans quel colonne souhaitez vous insérer ? (0 - 6)");
                 colonne = Convert.ToInt32(Console.ReadLine());
                 grillePuissance4.deposerJeton(colonne, Joueur);
                 if (grillePuissance4.victoireJoueur(Joueur, colonne))
@@ -95,15 +95,10 @@ namespace Morpion_ValereNeveux
 
             while (jouer)
             {
-                Console.WriteLine("A quel jeu voulez vous jouer ? Tapez 1 pour Morpion, tapez 2 pour  Puissance 4");
+                Console.WriteLine("Tapez 1 pour Morpion, tapez 2 pour  Puissance 4");
                 choix = Convert.ToInt32(Console.ReadLine());
                 while ((choix < 1) || (choix > 2))
-                {
-                    Console.WriteLine("Choisissez entre 1 et 2");
-                    choix = Convert.ToInt32(Console.ReadLine());
-                }
-
-                if (choix == 1)
+                 if (choix == 1)
                 {
                     Jeu.jouerMorpion();
                 }
@@ -111,16 +106,6 @@ namespace Morpion_ValereNeveux
                 {
                     Jeu.jouerPuissance4();
                 }
-                Console.WriteLine("Voulez vous rejouer ? (O pour Oui, N pour Non)");
-                if ((Console.ReadLine() == "N") || (Console.ReadLine() == "Non"))
-                {
-                    jouer = false;
-                }
-            }
-            Console.WriteLine("A bientot !");
-
-
-
 
         }
 
